@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Group Study 03/24</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="59b825e9-5d4a-46ba-b292-23158559b9b3" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">3️⃣</span></div><h1 class="page-title">Group Study 03/24</h1></header><div class="page-body"><h3 id="81eb2899-ea14-4312-aeb0-1e7adbfceef2" class="">시간 : 18:40~21:00</h3><h3 id="62deb3a7-6fd2-453f-a763-f1ed10b0ca92" class="">참가자 : 김도윤, 최교득, 이동헌</h3><h3 id="59e3a74c-cca9-4467-ac20-63e4c73405f7" class="">Task : </h3><ul id="54848b73-494b-42ed-816a-5d503d377d24" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">쓰레드 </span><ul id="3ffc2198-30f3-4f86-a518-50b9bca524eb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">DeadRock(데드락)</span></li></ul><ul id="ddb6745a-4419-4e8f-9758-cf1323a25100" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">쓰레드의 종류</span></li></ul><ul id="73c111c9-01eb-4817-b932-cd2b9037a148" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">레이스 컨디션이란?</span></li></ul><ul id="36f0c939-afdb-4edd-9210-3a9105e0fc6b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">동기화</span></li></ul></li></ul><ul id="c2bd9c32-6c4a-4fab-b002-d44bb9cecdf1" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">3/24일자 코드 복습</span></li></ul><ul id="1e84b8c2-b603-44d8-9ee2-3758d142e758" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">23일자 피드백 정리</span></li></ul><hr id="65cdbbc5-916f-4bbe-854e-19346d3c6a91"/><h2 id="9e79a163-7057-4a6d-abd1-0bbcf760855f" class="">활동내역</h2><p id="5659cb15-f186-47e6-9240-51502b8567d3" class="">
+</p><h2 id="6fb0fd3e-5246-4b61-8a58-5e009c0a1483" class="">1. Multi Chating 구조에 대한 이해</h2><figure id="6fee03ed-c769-4027-9e23-d3d67d74bf8c" class="image"><a href="Group%20Stud%206fee0/KakaoTalk_20220324_202033460.png"><img style="width:865px" src="Group%20Stud%206fee0/KakaoTalk_20220324_202033460.png"/></a></figure><pre id="76ae3ce1-b2dc-4a7c-a48f-ae4a48f0662d" class="code code-wrap"><code>쓰레드세이프란 멀티쓰레드 환경에서 안전하다라는 의미입니다.
+
+쓰레드세이프해야하는 자료구조 예시는 CRUD를 생각해보자.
+예를 들어 우리가 CRUD같은 작업을 하는 동안 발생하는 트랜젝션들이 발생합니다.
+멀티쓰레드 환경에서 안정적으로 동작해야해하기 때문에 다량의 트랜젝션들이 꼬이면 안됩니다.
+
+
+여러 개의 쓰레드가 하나의 리소스를 건들게 되면 문제가 발생할 수 있다.
+그래서 불변이라는 개념이 필요한겁니다.
+
+ --&gt; 동기화 (한 번에 하나씩 처리) &lt;-&gt;비동기 (한 번의 여러 개 처리)
+하나의 쓰레드가 끝날 때까지 기다렷다가 다음 쓰레드를 처리하게끔 하자!</code></pre><p id="682238e4-25f1-4061-8d3b-fa4a7d5796ad" class="">
+</p><ul id="8268f700-859a-45ba-b067-261d2550e1b3" class="bulleted-list"><li style="list-style-type:disc">동기화를 사용한 멀티채팅 코드 완성</li></ul><figure id="fb22d006-5b84-4a9c-8c4e-5c6c588476c2" class="image"><a href="Group%20Stud%206fee0/Untitled.png"><img style="width:951px" src="Group%20Stud%206fee0/Untitled.png"/></a></figure><p id="c34fb5ba-7fcd-44ce-b014-f4e38836d699" class="">
+</p><p id="4951e732-079e-447c-b6a9-6a71801f45ad" class="">
+</p><p id="3fef4692-4270-4c34-abd0-a7b62c24788d" class="">
+</p><p id="3f7ab879-6b64-4c1b-bddd-7c2e30941334" class="">
+</p><h2 id="f55bf9d7-fe51-43a6-94b9-326c16287eb4" class="">2. <strong>Synchronized Method</strong></h2><p id="f401b608-b7a0-4fd5-a70f-65e2f637f934" class="">
+</p><ul id="a8a75653-ca2b-4bd3-8f90-2c5bdcd72e4e" class="bulleted-list"><li style="list-style-type:disc">스레드 동기화 문제가 발생할 수 있다.
+멀티 - 스레드는 잘 사용하면 좋은 성능을 내지만, 스레드 간 동기화 문제를 해결해야 함
+동기화 문제는 heap에서 발생</li></ul><ul id="68e28960-a9d0-4260-a2ea-9a9befb8e7e2" class="bulleted-list"><li style="list-style-type:disc">스레드 동기화 문제를 해결하기 위해 thread - safe를 해야하는데 사용하는 키워드는 Synchronized이다.</li></ul><figure id="5f971e09-66ec-41aa-b839-50169397bbe9" class="image"><a href="Group%20Stud%206fee0/31.png"><img style="width:777px" src="Group%20Stud%206fee0/31.png"/></a></figure><figure id="db919e91-0dbf-45aa-9d79-637ea975410b" class="image"><a href="Group%20Stud%206fee0/lock.png"><img style="width:608px" src="Group%20Stud%206fee0/lock.png"/></a></figure><ul id="68b50c8c-2a0e-4cea-ba63-98e09780458f" class="bulleted-list"><li style="list-style-type:disc">&gt; ArrayList thread safe
+최소한의 작업에대가만 걸어야한다. 왜냐면 너무 많이 사용하면 멀티스레드의 의미를 상실함
+-&gt; lock을 하기 위해서 해주는 작업</li></ul><p id="50d0c944-625b-4241-acf3-237ff3e40477" class="">
+</p><p id="aa3175f5-309b-4377-ab57-ac2f2b23d8f9" class="">
+</p><h3 id="ce191015-71da-4c57-b55d-bfbfb3de1e19" class="">DeadRock(데드락)</h3><p id="cc8fcec6-053d-4017-a94f-300ee9c3c5aa" class="">
+</p><p id="dbb995d8-98a7-4d43-bc00-2eb4bfc061cf" class=""><strong>Synchronized Method를 사용하면 야기할 수 있는 상황이 데드락(교착상태)이다.</strong></p><p id="9cc37aab-4aa1-4869-bb9d-b045e00ab301" class="">무분별한 동기화 사용은 멀티쓰레드의 의미를 상실하게 만듬과 동시에 시스템의 문제를 야기할 수 있다는 점</p><p id="1eede3a4-9e82-402e-807f-8d9f28dd7eac" class="">→ 교착상태!!!!!!</p><ul id="fa8c650a-ac57-4a24-add3-4a333b8f7a62" class="bulleted-list"><li style="list-style-type:disc">데드락의 예방 , 회피, 부정에 대해 정리</li></ul><p id="afca4dbc-db6d-4b74-bf4d-3a0b7b7a96a5" class="">
+</p><figure id="8649b7ba-e834-47e0-8517-1cbc2762736d" class="image"><a href="Group%20Stud%206fee0/Java-Thread-Lock-Example-by-Crunchify.jpg"><img style="width:528px" src="Group%20Stud%206fee0/Java-Thread-Lock-Example-by-Crunchify.jpg"/></a></figure><div id="2242b6cf-ed31-47df-8deb-2394908314e5" class="column-list"><div id="7164f54f-3fc3-4fd5-afc0-0a9ebe10651e" style="width:50%" class="column"><p id="a5304ce8-1d20-4760-a1d5-f812bcd51609" class="">
+</p><h3 id="348461f1-7c2f-4f5d-b6ed-0493dcba9626" class="">Daemon Thread(데몬 스레드)</h3><p id="6f4118f3-7d03-4091-868f-24d090339547" class="">
+</p><ul id="8f5d86ae-a141-4e58-98e7-f1a8b9acdc0c" class="bulleted-list"><li style="list-style-type:disc">메인 스레드를 보조하는 역할을 하는 것이 데몬스레드</li></ul><ul id="0fee9ec2-a72c-42a9-9f61-3c70f5396cb4" class="bulleted-list"><li style="list-style-type:disc">메인 스레드를 종료하면 데몬 스레드가 강제 종료된다.</li></ul><ul id="4588cb7a-5f92-47fb-b93e-fcf232ef34c3" class="bulleted-list"><li style="list-style-type:disc"><strong>setDaemon(true)를 호출</strong>해서 데몬스레드의 영역을 지정할 수 있다.</li></ul><ul id="cff25760-0fd5-4842-8426-f9f0cbb58837" class="bulleted-list"><li style="list-style-type:disc">데몬스레드를 이용하는 대표적인 예가 가비지 컬렉터</li></ul><ul id="3c9fa6e6-8725-45d6-be76-de152d0f4679" class="bulleted-list"><li style="list-style-type:disc">가비지 컬렉터는 호출하지 않아도 실행되고 메모리 관리를 해주는 역할이다.</li></ul><p id="a20b24f8-5c9c-42df-afbc-cf0cca28af79" class="">
+</p><ul id="1a9b79e4-bbb9-4f97-9f73-e8e1e2eacc80" class="bulleted-list"><li style="list-style-type:disc">주의점은 스레드를 실행하는 start() 메소드가 호출되고 나서 setDaemon(true)를 호출하면 IllegalThreadStateException이 발생하기 때문에<strong>start() 메소드 호출 전에 setDaemon(true)를 호출</strong>해야 합니다.</li></ul><ul id="01af0038-87ac-4ad4-9f7b-4b7ace6e396e" class="bulleted-list"><li style="list-style-type:disc">현재 실행 중인 스레드가 데몬 스레드인지 아닌지를 구별하는 방법은 isDaemon() 메소드의 리턴값을 조사해보면 됩니다. 데몬 스레드일 경우 true를 리턴합니다.</li></ul><p id="da05baed-f969-46b2-adaf-748bf85a8285" class="">
+</p><p id="ddc1dee2-63cc-40ff-a00b-16d1341543b5" class="">
+</p><p id="42596dd0-4cbc-45a7-87ad-64f537d06aa2" class="">
+</p><hr id="7f575d13-98fb-4d7e-be96-96c90197a6fe"/><h3 id="2ea8918a-fda4-42a6-9b7d-70979a575f44" class="">내일 저녁에 만들어 볼 코드 </h3><ul id="56d63cc6-75e8-4a1d-baef-a9aa3e34f35c" class="bulleted-list"><li style="list-style-type:disc">데몬 스레드인지 아닌지 구별해보는 코드 짜보기</li></ul><ul id="99bcfce3-8b28-4ca6-a145-efe409b3b0fc" class="bulleted-list"><li style="list-style-type:disc">웹 크롤링 셀레니움 해보기 <p id="d5d0f756-ecb5-4fcd-8ed6-53776b07a6ef" class="">
+</p></li></ul></div><div id="31d722ca-84ac-4a27-b3e7-7d691fdbb344" style="width:49.99999999999999%" class="column"><p id="b49a7059-fc13-46ff-86c8-c13f05199ee7" class="">
+</p><ul id="101fa591-f0d5-4857-b38e-2a9794aef0c2" class="bulleted-list"><li style="list-style-type:disc"><strong>더 생각해봐야할 내용</strong><p id="5ac3f7ba-1b90-48a8-82fd-3cfb5e450335" class="">
+</p><ul id="26f174b4-be89-4c1d-b7cc-c00e955f3074" class="bulleted-list"><li style="list-style-type:circle">가비지 컬렉터와 핸들링을 할 수 있느냐 없느냐? 메모리 영역을 자동적으로 지우지 않게 우리가 컨트롤 할 수 있는가?</li></ul></li></ul></div></div><p id="db9ae4a5-a290-4abb-9b23-845827f51604" class="">
+</p><hr id="5e648185-b1eb-43a3-bfc2-79d0117d834a"/></div></article></body></html>
